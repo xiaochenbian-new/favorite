@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>小城边-个人导航</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="keywords" content="小城边,小城边个人导航,个人导航,简单网址导航"/>
+        <meta name="description" content="机会总是垂青于有准备的人"/>
+        <link rel="shortcut icon" href="static/img/me/favorite.svg"/>
+        <meta name="color-scheme" content="light dark"/>
+        <meta name="theme-color" content="#f2f2f2"/>
+        <link rel="dns-prefetch" href="//cdn.statically.io"/>
+        <link rel="dns-prefetch" href="//cdn.jsdelivr.net"/>
+        <link rel="dns-prefetch" href="//cdn.staticfile.org"/>
+        <link rel="dns-prefetch" href="//www.googletagmanager.com"/>
+        <link rel="preconnect" href="https://fonts.geekzu.org"/>
+        <link href="https://cdn.staticfile.org/normalize/8.0.1/normalize.min.css" rel="stylesheet"/>
+        <link href="static/css/style.min.css" rel="stylesheet" type="text/css"/>
+        <link href="static/css/toastr.min.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body class="wrapper">
+        <!--头部标题-->
+        <header id="header">
+            <div class="header">
+                <div class="title">
+                    <a href="index.html">小城边-个人导航</a>
+                </div>
+                <div class="about">
+                    <span class="iconify" data-icon="entypo:info-with-circle"></span>
+                    <a href="about.html" target="_self" rel="noopener noreferrer">关于</a>
+                    <!--白天&夜晚模式-->
+                    <div class="lightDarkMode">
+                        <div class="lightDarkModes" id="lightDarkMode">
+                            <i class="iconify-inline" data-icon="bxs:adjust"></i>
+                        </div>
+                        <div class="is-open hidden" id="is-open"></div>
+                        <div class="lightDarkOptions hidden" id="lightDarkOptions">
+                            <span class="lightDarkOption" name="Auto">
+                                <i class="iconify-inline" data-icon="bxs:adjust"></i>跟随系统
+                            </span>
+                            <span class="lightDarkOption" name="Light">
+                                <i class="iconify-inline" data-icon="akar-icons:sun-fill"></i>总是浅色
+                            </span>
+                            <span class="lightDarkOption" name="Dark">
+                                <i class="iconify-inline" data-icon="akar-icons:moon-fill"></i>总是深色
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!--侧边菜单-->
+        <nav id="menu">
+            <ul class="items">
+                <li class="item">
+                    <a class="scrollTo" href="#header">
+                        <span class="iconify" data-icon="bx:home-circle"></span>  &nbsp;
+                        首页
+                    </a>
+                </li>
+                <li class="item">
+                    <a class="scrollTo" href="#sns">
+                        <span class="iconify" data-icon="dashicons:admin-appearance"></span> &nbsp;
+                        知识库
+                    </a>
+                </li>
+                <li class="item">
+                    <a class="scrollTo" href="#devops">
+                        <span class="iconify" data-icon="solar:programming-outline"></span> &nbsp;
+                        DevOps
+                    </a>
+                </li>
+                <li class="item">
+                    <a class="scrollTo" href="#cloud">
+                        <span class="iconify" data-icon="eos-icons:ai-operator"></span> &nbsp;
+                        AI 智能
+                    </a>
+                </li>
+                <li class="item">
+                    <a class="scrollTo" href="#life">
+                        <span class="iconify" data-icon="ant-design:tool-filled"></span> &nbsp;
+                        工具平台
+                    </a>
+                </li>
+                <li class="item">
+                    <a class="scrollTo" href="#job">
+                        <span class="iconify" data-icon="gg:work-alt"></span> &nbsp;
+                        求 职
+                    </a>
+                </li>
+                <li class="item">
+                    <a class="scrollTo" href="#buy">
+                        <span class="iconify" data-icon="emojione-monotone:shopping-cart"></span> &nbsp;
+                        购 物
+                    </a>
+                </li>
+                <li class="item">
+                    <a class="scrollTo" href="#media">
+                        <span class="iconify" data-icon="carbon:media-library-filled"></span> &nbsp;
+                        影 音
+                    </a>
+                </li>
+                <li class="item">
+                    <a class="scrollTo" href="#bt">
+                        <span class="iconify" data-icon="eva:cloud-download-fill"></span> &nbsp;
+                        下 载
+                    </a>
+                </li>
+                <li class="item">
+                    <a class="scrollTo" href="#header">
+                        <span class="iconify" data-icon="emojione:top-arrow"></span> &nbsp;
+                        返回顶部
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!--内容-->
+        <main id="content" class="content">
+            <!--时间-->
+            <section id="banner" class="inner-center">
+                <div class="banner">
+                    <div class="container">
+                        <div class="greeting">
+                            <span id="greetings" class="greetings">Hello ...</span>
+                            <span id="date" class="date">北京时间</span>
+                            <span id="clock" class="clock"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--搜索-->
+            <section id="home_search">
+                <div class="item-box border" style="border-radius: 10px;">
+                    <!--搜索module-->
+                    <div id="search">
+                        <div id="search-list" class="hide-type-list">
+                            <div class="search-group s-current">
+                                <span class="type-text rainbow-text">搜 索:</span>
+                                <ul class="search-type">
+                                    <li>
+                                        <input checked="" type="radio" name="type" id="type-baidu" value="https://www.baidu.com/s?wd="
+                                               data-placeholder="百度一下，你就知道！" hidden=""/>
+                                        <label for="type-baidu" class="metaColor transition">百度</label>
+                                    </li>
+                                    <li>
+                                        <input checked="" type="radio" name="type" id="type-google"
+                                               value="https://www.google.com/search?q=" data-placeholder="输入关键词后按回车即可搜索" hidden=""/>
+                                        <label id="focused" for="type-google" class="metaColor transition">谷歌</label>
+                                    </li>
+                                    <li>
+                                        <input checked="" type="radio" name="type" id="type-bing" value="https://www.bing.com/search?q"
+                                               data-placeholder="Microsoft Bing Search" hidden="" />
+                                        <label for="type-bing" class="metaColor transition">Bing</label>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <form action="https://www.google.com/search?q=" method="get" target="_blank" id="super-search-fm">
+                            <input  style="border: 1px solid #b4d7e0;"
+                            type="text" id="search-text" autocomplete="off" placeholder="输入关键词后按回车即可搜索" value=""/>
+                            <button type="submit" id="search_submit" aria-label="Search">
+                                <span class="iconify" data-icon="akar-icons:search"></span>
+                            </button>
+                        </form>
+                        <div class="set-check transition switchBG tip" title="新窗口将打开搜索结果">
+                            <input type="checkbox" id="set-search-blank" checked="checked" required="required" hidden="hidden"/>
+                            <label for="set-search-blank"></label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--导航标签-->
+            <section id="home" class="inner-center main">
+                <div class="content-inside">
+                    <!--常用-->
+                    <div class="jj-list hot">
+                        <ul class="jj-list-con">
+                            <li style="background-color: #bddbde">
+                                <a href="https://xcb-gpt.zeabur.app/#/">
+                                    <img class="lazy"  loading="lazy" src="static/img/me/gpt1.jpg"/>
+                                    chatgpt-next-web
+                                </a>
+                            </li>
+                            <li style="background-color: #bddbde">
+                                <a href="https://gpt3-web.zeabur.app/#/chat/1002">
+                                    <img class="lazy"  loading="lazy" src="static/img/me/gpt3.png"/>
+                                    chatgpt-web
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.bilibili.com/">
+                                    <img class="lazy"  loading="lazy" src="static/img/me/bilibili.png"/>
+                                    Bilibili
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://mail.qq.com/?cancel_login=true&from=session_timeout">
+                                    <img class="lazy"  loading="lazy" src="static/img/me/qq-email.png"/>
+                                    QQ 邮箱
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://tools.liumingye.cn/music/?page=searchPage#/">
+                                    <img class="lazy" loading="lazy" src="static/img/me/freeMP3.ico"/>
+                                    FreeMP3
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.douyin.com/">
+                                    <img class="lazy"  loading="lazy"
+                                         src="static/img/me/douyin.ico"/>抖音
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://xiaochenbian.gitee.io/ctool-mysql_ddl_parse/">
+                                    <img class="lazy"  loading="lazy" src="static/img/me/ddl.png"/>
+                                    DDL
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--我的知识库-->
+                    <div id="sns" class="jj-list">
+                        <div class="jj-list-tit">&bullet; 我 的 <span>- 知识库</span></div>
+                        <ul class="jj-list-con">
+                            <li>
+                                <a href="https://www.yuque.com/xiaochenbian">
+                                    <img class="lazy"  loading="lazy" src="static/img/me/yvque.svg"/>
+                                    语雀
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://blog.csdn.net/Start1234567">
+                                    <img class="lazy"  loading="lazy" src="https://g.csdnimg.cn/static/logo/favicon32.ico"/>
+                                    CSDN 博客
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://juejin.cn/user/3298977204671773">
+                                    <img class="lazy"  loading="lazy" src="static/img/me/掘金.png"/>
+                                    掘金
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.zhixi.com/u/dee36037">
+                                    <img class="lazy"  oading="lazy" src="static/img/me/知犀.png"/>
+                                    知犀
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.processon.com/">
+                                    <img class="lazy white_bg"  loading="lazy" src="static/img/me/processON.ico"/>
+                                    processOn
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://localhost:63342/favorite/manifest.json?_ijt=pts3jh48co7lajp524a9cmo3sk">
+                                    <img class="lazy" loading="lazy" src="static/img/me/aliyunpan.ico"/>
+                                    阿里云盘
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://pan.baidu.com/">
+                                    <img class="lazy" loading="lazy" src="static/img/me/百度网盘.ico"/>
+                                    百度网盘
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--开发-->
+                    <div id="devops" class="jj-list">
+                        <div class="jj-list-tit">&bullet; DevOps <span>- 开发</span></div>
+                        <ul class="jj-list-con">
+                            <li>
+                                <a href="https://gitee.com/xiaochenbian">
+                                    <img class="lazy"  loading="lazy" src="static/img/me/gitee.ico"/>
+                                    gitee
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/xiaochenbian-new?tab=repositories">
+                                    <img class="lazy"  loading="lazy" src="static/img/me/github.png"/>
+                                    github
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.huaweicloud.com/">
+                                    <img class="lazy"  loading="lazy" src="static/img/me/华为云.ico"/>
+                                    华为云
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://cloud.tencent.com/">
+                                    <img class="lazy"  loading="lazy" src="static/img/me/腾讯云.ico"/>
+                                    腾讯云
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.aliyun.com/">
+                                    <img class="lazy"  loading="lazy" src="static/img/me/阿里云.ico"/>
+                                    阿里云
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.qnvps.cn/">
+                                    <img class="lazy"  loading="lazy" src="static/img/me/千牛云.png"/>
+                                    千牛云
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.coderutil.com/">
+                                    <img class="lazy" loading="lazy" src="static/img/me/coderutil.ico"/>
+                                    程序员盒子
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://xiaochenbian.gitee.io/ctool-mysql_ddl_parse/">
+                                    <img class="lazy" loading="lazy" src="https://xiaochenbian.gitee.io/ctool-mysql_ddl_parse/favicon.png"/>
+                                    DDL
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://baiy.github.io/Ctool/tool.html#/">
+                                    <img class="lazy" loading="lazy" src="static/img/me/ctool.ico"/>
+                                    Ctool
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://cron.ciding.cc/">
+                                    <img class="lazy" loading="lazy" src="static/img/me/ciding.png"/>
+                                    磁钉
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://b1f6c1c4.gitbook.io/learn-git-the-super-hard-way/">
+                                    <img class="lazy" loading="lazy" src="static/img/me/git.png"/>
+                                    GIT 教程
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--AI 人工智能-->
+                    <div id="cloud" class="jj-list">
+                        <div class="jj-list-tit">&bullet; AI <span>- 人工智能</span></div>
+                        <ul class="jj-list-con">
+                            <li>
+                                <a href="https://chat.openai.com/">
+                                    <img class="lazy"  loading="lazy" src="static/img/me/gpt3.png"/>
+                                    ChatGPT 官网
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="https://platform.openai.com/account/api-keys">
+                                    <img class="lazy"  loading="lazy" src="static/img/me/gpt-favicon.svg"/>
+                                    OpenAI 官网
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="https://xcb-gpt.zeabur.app/#/">
+                                    <img class="lazy"  loading="lazy" src="static/img/me/gpt1.jpg"/>
+                                    chatgpt-next(me)
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://gpt3-web.zeabur.app/#/chat/1002">
+                                    <img class="lazy" loading="lazy"
+                                         src="https://gpt3-web.zeabur.app/favicon.svg"/>
+                                    chatgpt-web(me)
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.zxf7460.cn/home?userId=8560">
+                                    <img class="lazy" loading="lazy"
+                                         src="https://gpt3-web.zeabur.app/favicon.svg"/>
+                                    chatgpt-web(Chuck Zeng)
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://chatgpt.nextweb.fun/">
+                                    <img class="lazy" loading="lazy"
+                                         src="https://gpt3-web.zeabur.app/favicon.svg"/>
+                                    chatgpt-next
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://chatkit.app/?chat=N5MguTYJViNv-V1v-aSJg">
+                                    <img class="lazy" loading="lazy"
+                                         src="static/img/me/chatKit.png"/>
+                                    ChatKit
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.wetab.link/">
+                                    <img class="lazy" loading="lazy"
+                                         src="static/img/me/wetab.ico"/>
+                                    Wetab
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://mossgpt.fun/">
+                                    <img class="lazy"  loading="lazy" src="static/img/me/mossgpt.ico"/>
+                                    MossGPT
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://wgpt.shop/">
+                                    <img class="lazy"  loading="lazy" src="static/img/me/gpt2.jpg"/>
+                                    小陆AceService店铺
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://faka.lan-qian.top/">
+                                    <img class="lazy"  loading="lazy"
+                                         src=""/>GPT-Key 购买
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://sms-activate.org/">
+                                    <img class="lazy"  loading="lazy"
+                                         src="static/img/me/sms.png"/>sms-接码平台
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.tly89.com/modules/index.php">
+                                    TLY-梯子
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://dhh.wtf/#/knowledge">
+                                    大行海
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://dash.zeabur.com/projects/6481fe69866e6d39e64d66be/services/6481fe98866e6d39e64d66c4?envID=6481fe6959b271a1c1bae9fa">
+                                    <img class="lazy" loading="lazy" src="static/img/me/zeabur.svg"/>
+                                    Zeabur
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.cloudflare.com">
+                                    <img class="lazy" loading="lazy" src="static/img/me/cloudflare.ico"/>
+                                    CloudFlare
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://vercel.com/">
+                                    <img class="lazy" loading="lazy" src="static/img/me/vercel.ico"/>
+                                    Vercel
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://nobepay.com/app/home">
+                                    <img class="lazy" loading="lazy" src="static/img/me/nobepay.svg"/>
+                                    nobepay-银行卡
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://lemurbrowser.com/app/zh/?hmsr=wetabhomepage">
+                                    <img class="lazy" loading="lazy" src="static/img/me/houhuliulanqi.ico"/>
+                                    猴狐浏览器
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--工具平台-->
+                    <div id="life" class="jj-list">
+                        <div class="jj-list-tit">&bullet; 工 具<span>转换、生成</span></div>
+                        <ul class="jj-list-con">
+                            <ul class="jj-list-con">
+                                <li title="pdf转换">
+                                    <a href="https://smallpdf.com/">
+                                        <img class="lazy"  loading="lazy" src="static/img/me/smallpdf.png"/>
+                                        Smallpdf
+                                    </a>
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <!--求职-->
+                    <div id="job" class="jj-list">
+                        <div class="jj-list-tit">&bullet; 求 职<span></span></div>
+                        <ul class="jj-list-con">
+                            <ul class="jj-list-con">
+                                <li>
+                                    <a href="https://www.zhipin.com/guangzhou/?sid=sem_pz_bdpc_dasou_title">
+                                        <img class="lazy"  loading="lazy" src="static/img/me/boss.png"/>
+                                        BOSS 职聘
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.liepin.com/">
+                                        <img class="lazy"  loading="lazy" src="static/img/me/猎聘.png"/>
+                                        猎聘
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://landing.zhaopin.com/">
+                                        <img class="lazy"  loading="lazy" src="static/img/me/智联.png"/>
+                                        智联
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.51job.com/">
+                                        <img class="lazy"  loading="lazy" src="static/img/me/前程无忧.ico"/>
+                                        前程无忧
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.lagou.com/">
+                                        <img class="lazy"  loading="lazy" src="static/img/me/拉勾.ico"/>
+                                        拉勾
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="中国人才热线">
+                                        <img class="lazy"  loading="lazy" src="static/img/me/中国人才热线.webp"/>
+                                        中国人才热线
+                                    </a>
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <!--购物-->
+                    <div id="buy" class="jj-list">
+                        <div class="jj-list-tit">&bullet; 购 物 <span>- 国内外购买平台</span></div>
+                        <ul class="jj-list-con">
+
+                            <li>
+                                <a href="https://www.taobao.com">
+                                    <img class="lazy"  loading="lazy"
+                                         src="static/img/me/taobao.png"/>淘 宝
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://www.jd.com/">
+                                    <img class="lazy"  loading="lazy"
+                                         src="static/img/me/jingdong.ico"/>京 东
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.suning.com/">
+                                    <img class="lazy"  loading="lazy"
+                                         src="static/img/me/sulin.ico"/>苏 宁
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://you.163.com/">
+                                    <img class="lazy"  loading="lazy"
+                                         src="static/img/me/wangyiyanxuan.ico"/>网易严选
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--影音-->
+                    <div id="media" class="jj-list">
+                        <div class="jj-list-tit">&bullet; 影 音 <span>- 视频、音乐</span></div>
+                        <ul class="jj-list-con">
+                            <li>
+                                <a href="https://www.bilibili.com/">
+                                    <img class="lazy"  loading="lazy" src="static/img/me/bilibili.png"/>
+                                    Bilibili
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.douyin.com/">
+                                    <img class="lazy"  loading="lazy" src="static/img/me/douyin.ico"/>
+                                    抖音
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.youku.com/">
+                                    <img class="lazy"  loading="lazy" src="static/img/me/优酷.png"/>
+                                    优酷
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.iqiyi.com/">
+                                    <img class="lazy"  loading="lazy" src="static/img/me/iqiyi.png"/>
+                                    爱奇艺
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://v.qq.com/">
+                                    <img class="lazy"  loading="lazy" src="static/img/me/tenxunshipin.ico"/>
+                                    腾讯视频
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.mgtv.com/">
+                                    <img class="lazy"  loading="lazy" src="static/img/me/芒果TV.ico"/>
+                                    芒果 TV
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/">
+                                    <img class="lazy"  loading="lazy" src="static/img/me/youtube.ico"/>
+                                    Youtube
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://y.qq.com/portal/profile.html?uin=214383458">
+                                    <img class="lazy" loading="lazy" src="static/img/me/qq-yinyue.ico"/>
+                                    QQ 音乐
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://myfreemp3music.com/">
+                                    <img class="lazy"  loading="lazy" src="static/img/me/freeMP3.ico"/>
+                                    MyFreeMp3
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://music.163.com/">
+                                    <img class="lazy" loading="lazy" src="static/img/me/wangyiyunyinyue.ico"/>
+                                    网易云音乐
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.kugou.com/">
+                                    <img class="lazy"  loading="lazy" src="static/img/me/酷狗.ico"/>
+                                    酷狗
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--资源下载-->
+                    <div id="bt" class="jj-list">
+                        <div class="jj-list-tit">&bullet; 下 载 <span>- 视频、软件 、文档</span></div>
+                        <ul class="jj-list-con">
+                            <li>
+                                <a href="https://cupfox.app/">
+                                    <img class="lazy"  loading="lazy" src="static/img/me/茶杯狐.png"/>
+                                    茶杯狐
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.yysub.net/">
+                                    <img class="lazy"  loading="lazy" src="static/img/me/人人影视.png"/>
+                                    人人字幕组
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="https://note.youdao.com/yws/res/9162/WEBRESOURCEd128f9ef15ae0760eb7bd2f18f4825c3">
+                                    <img class="lazy"  loading="lazy" src="static/software/Snipaste_2023-06-19_23-29-03.png"/>
+                                    Snipaste
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--其他-->
+                    <div id="other" class="jj-list">
+                        <div class="jj-list-tit">&bullet; 其 他 </div>
+                        <ul class="jj-list-con">
+                            <ul class="jj-list-con">
+                                <li>
+                                    <a href="https://iconify.design/">
+                                        <img class="lazy"  loading="lazy" src="static/img/me/Iconfiy.ico"/>
+                                        Iconify 图标
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://cook.aiurs.co/#_6">
+                                        <img class="lazy"  loading="lazy" src="https://cook.aiurs.co/assets/images/favicon.png"/>
+                                        程序员做饭指南
+                                    </a>
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!--底部-->
+        <footer id="footer" class="footer">
+            <p>联系方式 QQ: 1637201726 </p>
+        </footer>
+
+        <!--右边返回顶部-->
+        <div class="to-top back-to-top">
+            <svg t="1647144384541" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                 p-id="3569" width="16" height="16">
+                <path d="M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3c-3.8 5.3-0.1 12.7 6.5 12.7h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z"
+                      p-id="3570"></path>
+            </svg>
+        </div>
+        <!--右上角github-->
+       <!-- <a href="https://github.com/eallion/favorite" class="github-corner" aria-label="View source on GitHub">
+            <svg width="68" height="68" viewBox="0 0 250 250"
+                 style=" fill: #151513; color: #f2f2f2; position: absolute; top: 0; border: 0; right: 0; "
+                 aria-hidden="true">
+                <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+                <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+                      fill="currentColor" style="transform-origin: 130px 106px" class="octo-arm"></path>
+                <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+                      fill="currentColor" class="octo-body"></path>
+            </svg>
+        </a>-->
+        <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/moment.js/2.29.2/moment.min.js"></script>
+        <script src="https://cdn.staticfile.org/vanilla-lazyload/17.3.1/lazyload.min.js"></script>
+        <script src="https://cdn.staticfile.org/iconify/2.2.1/iconify.min.js"></script>
+        <script type="text/javascript" src="static/js/custom.min.js" id="custom-js"></script>
+        <script type="text/javascript" src="static/js/toastr.min.js" id="toastr-js"></script>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <script>// Check that service workers are registered if ('serviceWorker' in navigator){ window.addEventListener('load', ()=>{ navigator.serviceWorker.register('/service-worker.js')})} </script>
+        <script async defer data-website-id="fd47db62-e1d6-453d-8068-87ef4e718ef9"
+                src="https://static.eallion.com/woniutongji.js" data-host-url="https://a.eallion.com"
+                data-domains="s.eallion.com"></script>
+    </body>
+    <style>
+        .jj-list-con li {
+            background: seashell;
+        }
+
+        .jj-list-con li a {
+            color: rgba(49, 70, 89, 1);
+            font-size: 16px;
+        }
+
+        .jj-list-con li {
+            border-radius: 8px;
+        }
+
+        .items li a {
+            -webkit-transform:  translateX(2px);
+            -moz-transform: translateX(2px);
+            -o-transform: translateX(2px);
+            transform:  translateX(2px);
+        }
+
+        ul.search-type li input:checked+label {
+            color: #fff;
+            background-color: #1890FF;
+        }
+
+        /*彩色文字*/
+        .rainbow-text {
+            background: -webkit-linear-gradient(45deg, #0000ff, #dd00ff, #ff0d4d, #008000, #ff8c00, #aeff00, #00ff1a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .main {
+            padding-top: 30px;
+        }
+    </style>
+</html>
