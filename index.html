@@ -29,7 +29,7 @@
                     <span class="iconify" data-icon="entypo:info-with-circle"></span>
                     <a href="about.html" target="_self" rel="noopener noreferrer">关于</a>
                     <span class="iconify" data-icon="octicon:mirror-16"></span>
-                    <a id="mirror" >镜像</a>
+                    <a id="mirror" rel="noopener noreferrer">镜像</a>
                     <!--白天&夜晚模式-->
                     <div class="lightDarkMode">
                         <div class="lightDarkModes" id="lightDarkMode">
@@ -804,10 +804,16 @@
             window.onload = function() {
                 // 在这里编写要在页面加载时执行的 JavaScript 代码
                 if (href.includes("gitee")) {
-                    link.setAttribute("href", "https://xcb-nav.zeabur.app/")
+                    link.setAttribute("href", "https://xcb-nav.zeabur.app/");
+                    link.setAttribute("target", "_self");
                 }
                 if (href.includes("zeabur")) {
-                    link.setAttribute("href", "https://xiaochenbian.gitee.io/nav/")
+                    link.setAttribute("href", "https://xiaochenbian.gitee.io/nav/");
+                    link.setAttribute("target", "_self");
+                }
+                if (href.includes("localhost")) {
+                    link.setAttribute("href", "https://xiaochenbian.gitee.io/nav/");
+                    link.setAttribute("target", "_self");
                 }
             };
         </script>
