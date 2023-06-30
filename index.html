@@ -28,6 +28,8 @@
                 <div class="about">
                     <span class="iconify" data-icon="entypo:info-with-circle"></span>
                     <a href="about.html" target="_self" rel="noopener noreferrer">关于</a>
+                    <span class="iconify" data-icon="octicon:mirror-16"></span>
+                    <a id="mirror" >镜像</a>
                     <!--白天&夜晚模式-->
                     <div class="lightDarkMode">
                         <div class="lightDarkModes" id="lightDarkMode">
@@ -795,9 +797,20 @@
         <script type="text/javascript" src="static/js/toastr.min.js" id="toastr-js"></script>
         <meta name="apple-mobile-web-app-capable" content="yes"/>
         <script>// Check that service workers are registered if ('serviceWorker' in navigator){ window.addEventListener('load', ()=>{ navigator.serviceWorker.register('/service-worker.js')})} </script>
-        <script async defer data-website-id="fd47db62-e1d6-453d-8068-87ef4e718ef9"
-                src="https://static.eallion.com/woniutongji.js" data-host-url="https://a.eallion.com"
-                data-domains="s.eallion.com"></script>
+        <script async defer data-website-id="fd47db62-e1d6-453d-8068-87ef4e718ef9" src="https://static.eallion.com/woniutongji.js" data-host-url="https://a.eallion.com" data-domains="s.eallion.com"></script>
+        <script>
+            var href = window.location.href;
+            var link = document.getElementById('mirror');
+            window.onload = function() {
+                // 在这里编写要在页面加载时执行的 JavaScript 代码
+                if (href.includes("gitee")) {
+                    link.setAttribute("href", "https://xcb-nav.zeabur.app/")
+                }
+                if (href.includes("zeabur")) {
+                    link.setAttribute("href", "https://xiaochenbian.gitee.io/nav/")
+                }
+            };
+        </script>
     </body>
     <style>
         .jj-list-con li {
