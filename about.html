@@ -24,21 +24,24 @@
                 <div class="about">
                     <span class="iconify" data-icon="entypo:info-with-circle"></span>
                     <a href="about.html" target="_self" rel="noopener noreferrer">关于</a>
-                    <!--<span class="iconify" data-icon="file-icons:hugo"></span>
-                    <a href="https://www.yuque.com/xiaochenbian" target="_blank" rel="noopener noreferrer">语雀</a>-->
+                    <span class="iconify" data-icon="octicon:mirror-16"></span>
+                    <a id="mirror" rel="noopener noreferrer">镜像</a>
+                    <!--白天&夜晚模式-->
                     <div class="lightDarkMode">
                         <div class="lightDarkModes" id="lightDarkMode">
                             <i class="iconify-inline" data-icon="bxs:adjust"></i>
                         </div>
                         <div class="is-open hidden" id="is-open"></div>
-                        <div class="lightDarkOptions hidden" id="lightDarkOptions"><span class="lightDarkOption"
-                                                                                         name="Auto">
-                    <i class="iconify-inline" data-icon="bxs:adjust"></i>跟随系统</span>
+                        <div class="lightDarkOptions hidden" id="lightDarkOptions">
+                            <span class="lightDarkOption" name="Auto">
+                                <i class="iconify-inline" data-icon="bxs:adjust"></i>跟随系统
+                            </span>
                             <span class="lightDarkOption" name="Light">
-                        <i class="iconify-inline" data-icon="akar-icons:sun-fill"></i>总是浅色</span>
+                                <i class="iconify-inline" data-icon="akar-icons:sun-fill"></i>总是浅色
+                            </span>
                             <span class="lightDarkOption" name="Dark">
-                        <i class="iconify-inline" data-icon="akar-icons:moon-fill"></i>总是深色
-                    </span>
+                                <i class="iconify-inline" data-icon="akar-icons:moon-fill"></i>总是深色
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -46,20 +49,32 @@
         </header>
 
         <main id="content" class="content">
-
-            <section id="home" class="about-center">
-                <div class="content-about markdown-body">
-                    5$ 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
-                    <br>
-                    120$  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
-
-                    <h3 class="title-about">航线</h3>
-                    <a href="http://www.1006788.com/"> http://www.1006788.com/ </a>
-                    <a href="https://nav.miooku.com/"> https://nav.miooku.com/ </a>
-                    <a href="https://nav.rss.ink/"> https://nav.rss.ink/ </a>
-
-                    <h3 class="title-about">关于本站</h3>
-                    <a href="https://github.com/eallion/favorite"> 本网站修改于 https://github.com/eallion/favorite 开源项目 </a>
+            <section id="home" class="inner-center main myhome">
+                <div class="block">
+                    <h3 class="rainbow-text">gpt-key</h3> <br>
+                    <p>$5 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</p><br>
+                    <p>$5 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</p><br>
+                    <p>$5 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</p><br>
+                    <p>$120 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</p>
+                </div>
+                <div class="block">
+                    <h3 class="rainbow-text">GPT相关：</h3><br>
+                    <p>GPT搭建文档：<a href="https://rptzik3toh.feishu.cn/docx/XtrdduHwXoSCGIxeFLlcEPsdn8b">https://rptzik3toh.feishu.cn/docx/XtrdduHwXoSCGIxeFLlcEPsdn8b</a></p><br>
+                    <p>Chuch_Zeng搭建的 gpt-web： GkKvlZPBFRWP ： <a href="https://www.zxf7460.cn/home?userId=8560">前往</a></p><br>
+                </div>
+            </section>
+            <section class="inner-center myhome" style="margin-top: 20px">
+                <div class="block3">
+                    <h3>块 1</h3>
+                    <p>这是块 1 的内容</p>
+                </div>
+                <div class="block3">
+                    <h3>块 2</h3>
+                    <p>这是块 2 的内容</p>
+                </div>
+                <div class="block3">
+                    <h3>块 3</h3>
+                    <p>这是块 3 的内容</p>
                 </div>
             </section>
         </main>
@@ -82,14 +97,52 @@
         <script src="https://cdn.staticfile.org/iconify/2.2.1/iconify.min.js"></script>
         <script type="text/javascript" src="static/js/custom.min.js" id="custom-js"></script>
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <script>// Check that service workers are registered
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js');
-            });
-        }</script>
-        <script async defer data-website-id="fd47db62-e1d6-453d-8068-87ef4e718ef9"
-                src="https://static.eallion.com/woniutongji.js" data-host-url="https://a.eallion.com"
-                data-domains="s.eallion.com"></script>
+        <script>
+            var href = window.location.href;
+            var link = document.getElementById('mirror');
+            window.onload = function() {
+                // 在这里编写要在页面加载时执行的 JavaScript 代码
+                if (href.includes("gitee")) {
+                    link.setAttribute("href", "https://xcb-nav.zeabur.app/");
+                    link.setAttribute("target", "_self");
+                }
+                if (href.includes("zeabur")) {
+                    link.setAttribute("href", "https://xiaochenbian.gitee.io/nav/");
+                    link.setAttribute("target", "_self");
+                }
+                if (href.includes("localhost")) {
+                    link.setAttribute("href", "https://xiaochenbian.gitee.io/nav/");
+                    link.setAttribute("target", "_self");
+                }
+            };
+        </script>
+        <script async defer data-website-id="fd47db62-e1d6-453d-8068-87ef4e718ef9" src="https://static.eallion.com/woniutongji.js" data-host-url="https://a.eallion.com" data-domains="s.eallion.com"></script>
     </body>
+    <style>
+        .myhome {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .block {
+            flex-basis: calc(50% - 10px);
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 255, 0.2); /* 修改为浅蓝色阴影 */
+        }
+
+        .block3 {
+            flex-basis: calc(33.3% - 20px);
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 255, 0.2); /* 修改为浅蓝色阴影 */
+        }
+
+        /*彩色文字*/
+        .rainbow-text {
+            background: -webkit-linear-gradient(45deg, #0000ff, #dd00ff, #ff0d4d, #008000, #ff8c00, #aeff00, #00ff1a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
 </html>
