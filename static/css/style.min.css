@@ -456,7 +456,7 @@ textarea {
     color: rgba(49, 70, 89, 1);
     font-size: 14px;
     text-align: left;
-    padding-left: 1.5em;
+    padding-left: 0.5em;
     line-height: 44px;
     transition: all .2s;
     border-radius: 2px;
@@ -464,8 +464,8 @@ textarea {
 }
 
 .jj-list-con li a img {
-    height: 16px;
-    width: 16px;
+    height: 20px;
+    width: 20px;
     margin: 0 8px 2px 0;
     vertical-align: middle
 }
