@@ -17,40 +17,11 @@
         <link href="https://cdn.staticfile.org/normalize/8.0.1/normalize.min.css" rel="stylesheet"/>
         <link href="static/css/style.min.css" rel="stylesheet" type="text/css"/>
         <link href="static/css/toastr.min.css" rel="stylesheet" type="text/css"/>
+        <link href="my.css" rel="stylesheet" type="text/css"/>
     </head>
     <body class="wrapper">
         <!--头部标题-->
-        <header id="header">
-            <div class="header">
-                <div class="title">
-                    <a href="index.html">小城边-个人导航</a>
-                </div>
-                <div class="about">
-                    <span class="iconify" data-icon="entypo:info-with-circle"></span>
-                    <a href="about.html" target="_self" rel="noopener noreferrer">关于</a>
-                    <span class="iconify" data-icon="octicon:mirror-16"></span>
-                    <a id="mirror" rel="noopener noreferrer">镜像</a>
-                    <!--白天&夜晚模式-->
-                    <div class="lightDarkMode">
-                        <div class="lightDarkModes" id="lightDarkMode">
-                            <i class="iconify-inline" data-icon="bxs:adjust"></i>
-                        </div>
-                        <div class="is-open hidden" id="is-open"></div>
-                        <div class="lightDarkOptions hidden" id="lightDarkOptions">
-                            <span class="lightDarkOption" name="Auto">
-                                <i class="iconify-inline" data-icon="bxs:adjust"></i>跟随系统
-                            </span>
-                            <span class="lightDarkOption" name="Light">
-                                <i class="iconify-inline" data-icon="akar-icons:sun-fill"></i>总是浅色
-                            </span>
-                            <span class="lightDarkOption" name="Dark">
-                                <i class="iconify-inline" data-icon="akar-icons:moon-fill"></i>总是深色
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
+        <header id="header" class="header-footer"> </header>
 
         <!--侧边菜单-->
         <nav id="menu">
@@ -884,10 +855,7 @@
         </main>
 
         <!--底部-->
-        <footer id="footer" class="footer">
-            <p>联系方式 QQ: 1637201726 </p>
-        </footer>
-
+        <footer id="footer" class="footer header-footer"></footer>
         <!--右边返回顶部-->
         <div class="to-top back-to-top">
             <svg t="1647144384541" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -896,18 +864,6 @@
                       p-id="3570"></path>
             </svg>
         </div>
-        <!--右上角github-->
-       <a href="https://github.com/xiaochenbian-new/favorite" class="github-corner" aria-label="View source on GitHub">
-            <svg width="68" height="68" viewBox="0 0 250 250"
-                 style=" fill: #151513; color: #f2f2f2; position: absolute; top: 0; border: 0; right: 0; "
-                 aria-hidden="true">
-                <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-                <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
-                      fill="currentColor" style="transform-origin: 130px 106px" class="octo-arm"></path>
-                <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
-                      fill="currentColor" class="octo-body"></path>
-            </svg>
-        </a>
         <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://cdn.staticfile.org/moment.js/2.29.2/moment.min.js"></script>
         <script src="https://cdn.staticfile.org/vanilla-lazyload/17.3.1/lazyload.min.js"></script>
@@ -917,29 +873,19 @@
         <meta name="apple-mobile-web-app-capable" content="yes"/>
         <script>// Check that service workers are registered if ('serviceWorker' in navigator){ window.addEventListener('load', ()=>{ navigator.serviceWorker.register('/service-worker.js')})} </script>
         <script async defer data-website-id="fd47db62-e1d6-453d-8068-87ef4e718ef9" src="https://static.eallion.com/woniutongji.js" data-host-url="https://a.eallion.com" data-domains="s.eallion.com"></script>
+        <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
         <script>
-            var href = window.location.href;
-            var link = document.getElementById('mirror');
-            window.onload = function() {
-                // 在这里编写要在页面加载时执行的 JavaScript 代码
-                if (href.includes("gitee")) {
-                    link.setAttribute("href", "https://nav.xiaochenbian.cc");
-                    link.setAttribute("target", "_self");
-                } else {
-                    link.setAttribute("href", "https://xiaochenbian.gitee.io/nav/");
-                    link.setAttribute("target", "_self");
-                }
-                if (href.includes("localhost")) {
-                    link.setAttribute("href", "https://xiaochenbian.gitee.io/nav/");
-                    link.setAttribute("target", "_self");
-                }
-            };
+            // 共享头部
+            $(function(){
+                $("#header").load("_header.html");
+            });
+            // 共享尾部
+            $(function(){
+                $("#footer").load("_footer.html");
+            });
         </script>
     </body>
     <style>
-        #header {
-            background: linear-gradient(120deg, rgba(247,135,54,0.208) 0%, rgba(54,125,247,0.208) 100%);
-        }
         .jj-list-con li {
             background: seashell;
         }
@@ -963,17 +909,6 @@
         ul.search-type li input:checked+label {
             color: #fff;
             background-color: #1890FF;
-        }
-
-        /*彩色文字*/
-        .rainbow-text {
-            background: -webkit-linear-gradient(45deg, #0000ff, #dd00ff, #ff0d4d, #008000);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .main {
-            padding-top: 30px;
         }
     </style>
 </html>

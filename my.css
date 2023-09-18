@@ -1,0 +1,12 @@
+/*彩色文字*/
+.rainbow-text {
+    background: -webkit-linear-gradient(45deg, #0000ff, #dd00ff, #ff0d4d, #008000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/**渐变背景*/
+.header-footer {
+    background: linear-gradient(120deg, rgba(247,135,54,0.208) 0%, rgba(54,125,247,0.208) 100%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
