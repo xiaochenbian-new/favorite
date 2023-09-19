@@ -1,28 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cn">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <title>小城边-关于</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="keywords" content="小城边,小城边个人导航,个人导航,简单网址导航"/>
+        <meta name="description" content="机会总是垂青于有准备的人"/>
         <link rel="shortcut icon" href="static/img/me/favorite.svg"/>
-        <meta name="theme-color" content="#f2f2f2">
-        <link rel="dns-prefetch" href="//cdn.statically.io">
-        <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
-        <link rel="dns-prefetch" href="//cdn.staticfile.org">
-        <link rel="dns-prefetch" href="//www.googletagmanager.com">
-        <link rel="preconnect" href="https://fonts.geekzu.org">
-        <link rel="preconnect" href="https://fonts.geekzu.org" crossorigin>
-        <link href="https://cdn.staticfile.org/normalize/8.0.1/normalize.min.css" rel="stylesheet">
-        <link href="static/css/style.min.css" rel="stylesheet" type="text/css">
-        <link href="https://cdn.staticfile.org/github-markdown-css/5.1.0/github-markdown.min.css" rel="stylesheet">
-        <!--[if lt IE 9]>
-        <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script><![endif]--></head>
+        <meta name="color-scheme" content="light dark"/>
+        <meta name="theme-color" content="#f2f2f2"/>
+        <link rel="dns-prefetch" href="//cdn.statically.io"/>
+        <link rel="dns-prefetch" href="//cdn.jsdelivr.net"/>
+        <link rel="dns-prefetch" href="//cdn.staticfile.org"/>
+        <link rel="dns-prefetch" href="//www.googletagmanager.com"/>
+        <link rel="preconnect" href="https://fonts.geekzu.org"/>
+        <link href="https://cdn.staticfile.org/normalize/8.0.1/normalize.min.css" rel="stylesheet"/>
+        <link href="static/css/style.min.css" rel="stylesheet" type="text/css"/>
+        <link href="static/css/toastr.min.css" rel="stylesheet" type="text/css"/>
         <link href="my.css" rel="stylesheet" type="text/css"/>
+    </head>
+
     <body class="wrapper">
         <!--头部标题-->
-        <header id="header" class="header-footer"> </header>
+        <header id="header" class="header-footer">
+            <div class="header">
+                <div class="title">
+                    <a href="index.html">小城边-个人导航</a>
+                </div>
+                <div class="about">
+                    <a id="header-home" href="index.html"> <iconify-icon icon="carbon:home"></iconify-icon>
+                        首页
+                    </a>
+                    <a id="header-word" href="#">
+                        <iconify-icon icon="material-symbols:folder-outline"></iconify-icon>
+                        文档
+                    </a>
+                    <a id="header-download" style="display: none" href="download.html">
+                        <iconify-icon icon="mingcute:download-line"></iconify-icon>
+                        下载
+                    </a>
+                    <a id="header-about" href="about.html" style="color: #f78736" target="_self" rel="noopener noreferrer">
+                        <iconify-icon icon="mdi:about-circle-outline"></iconify-icon>
+                        <b>关于</b>
+                    </a>
+                </div>
+            </div>
+        </header>
 
         <main id="content" class="content">
-            <section id="home" class="inner-center main myhome">
+            <!--时间-->
+            <section id="banner" class="inner-center">
+                <div class="banner">
+                    <div class="container">
+                        <div class="greeting">
+                            <span id="greetings" class="greetings">Hello ...</span>
+                            <span id="date" class="date">北京时间</span>
+                            <span id="clock" class="clock"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="home" class="inner-center myhome">
                 <div class="block">
                     <h3 class="rainbow-text">gpt-key &nbsp;&nbsp;&nbsp;
                         <a href="https://openaikey.lan-qian.top/">查询额度: 地址1</a>
@@ -47,17 +86,8 @@
                 </div>
             </section>
             <section class="inner-center myhome" style="margin-top: 20px">
-                <div class="block3" style="height: 400px">
-                    <h3>块 1</h3>
-                    <p>这是块 1 的内容</p>
-                </div>
-                <div class="block3">
-                    <h3>块 2</h3>
-                    <p>这是块 2 的内容</p>
-                </div>
-                <div class="block3">
-                    <h3>块 3</h3>
-                    <p>这是块 3 的内容</p>
+                <div  style="height: 400px">
+
                 </div>
             </section>
         </main>
@@ -89,14 +119,28 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
         <script>
-            // 共享头部
-            $(function(){
-                $("#header").load("_header.html");
-            });
             // 共享尾部
             $(function(){
                 $("#footer").load("_footer.html");
             });
+            // 当前地址
+            var href = window.location.href;
+            // 镜像按钮
+            var link = document.getElementById('mirror');
+            // 下载按钮
+            var headerDownload = document.getElementById('header-download');
+            window.onload = function() {
+                // 在这里编写要在页面加载时执行的 JavaScript 代码
+                if (href.includes("gitee")) {
+                    link.setAttribute("href", "https://nav.xiaochenbian.cc");
+                    link.setAttribute("target", "_self");
+                } else {
+                    link.setAttribute("href", "https://xiaochenbian.gitee.io/nav/");
+                    link.setAttribute("target", "_self");
+                    // 设置显示下载
+                    headerDownload.style.display="";
+                }
+            };
         </script>
         <script async defer data-website-id="fd47db62-e1d6-453d-8068-87ef4e718ef9" src="https://static.eallion.com/woniutongji.js" data-host-url="https://a.eallion.com" data-domains="s.eallion.com"></script>
     </body>
