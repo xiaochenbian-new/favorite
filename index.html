@@ -762,24 +762,25 @@
             $(function(){
                 $("#footer").load("_footer.html");
             });
-            // // 当前地址
-            // var href = window.location.href;
-            // // 镜像按钮
-            // var link = document.getElementById('mirror');
-            // // 下载按钮
-            // var headerDownload = document.getElementById('header-download');
-            // window.onload = function() {
-            //     // 在这里编写要在页面加载时执行的 JavaScript 代码
-            //     if (href.includes("gitee")) {
-            //         link.setAttribute("href", "https://nav.xiaochenbian.cc");
-            //         link.setAttribute("target", "_self");
-            //     } else {
-            //         link.setAttribute("href", "https://xiaochenbian.gitee.io/nav/");
-            //         link.setAttribute("target", "_self");
-            //         // 设置显示下载
-            //         headerDownload.style.display="";
-            //     }
-            // };
+            // 当前地址
+            var href = window.location.href;
+            // 镜像按钮
+            var link = document.getElementById('mirror');
+            // 下载按钮
+            var headerDownload = document.getElementById('header-download');
+            window.onload = function() {
+                // 设置显示下载
+                headerDownload.style.display="";
+                // 在这里编写要在页面加载时执行的 JavaScript 代码
+                if (href.includes("gitee")) {
+                    link.setAttribute("href", "https://nav.xiaochenbian.cc");
+                    link.setAttribute("target", "_self");
+                } else {
+                    link.setAttribute("href", "https://xiaochenbian.gitee.io/nav/");
+                    link.setAttribute("target", "_self");
+
+                }
+            };
         </script>
     </body>
     <style>
