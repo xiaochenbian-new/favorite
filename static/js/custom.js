@@ -764,11 +764,11 @@ $(document).ready(function () {
 $('.to-top').toTop({
   //options with default values
   autohide: true,
-  offset: 420,
-  speed: 500,
+  offset: 200,
+  speed: 100,
   position: true,
-  right: 15,
-  bottom: 15
+  right: 30,
+  bottom: 50
 });
 
 /*
