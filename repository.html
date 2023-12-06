@@ -34,7 +34,7 @@
                         <iconify-icon icon="material-symbols:folder-outline"></iconify-icon>
                         <b>知识库</b>
                     </a>
-                    <a id="header-download" style="display: none;" href="download.html">
+                    <a id="header-download" href="download.html">
                         <iconify-icon icon="mingcute:download-line"></iconify-icon>
                         下载
                     </a>
@@ -64,7 +64,7 @@
             <!--导航标签-->
             <section id="home" class="inner-center myhome">
                 <div class="block">
-                    <h3 class="rainbow-text">MindManager脑图</h3> <br>
+                    <h2 class="rainbow-text">MindManager脑图</h2> <br>
                     <p>
                         <a href="static/myDos/MySQL SQL语句.html" target="_blank">
                             <img class="lazy downPhoto" loading="lazy" src="static/img/me/study.png"/>
@@ -80,7 +80,7 @@
                 </div>
 
                 <div class="block">
-                    <h3 class="rainbow-text">文档</h3><br>
+                    <h2 class="rainbow-text">文档</h2><br>
                     <p>
                         <a href="static/software/Spring全家桶面试题—图灵徐庶.pdf" class="downA" download>
                             Spring全家桶面试题-图灵徐庶.pdf
@@ -137,24 +137,6 @@
             $(function(){
                 $("#footer").load("_footer.html");
             });
-            // 当前地址
-            var href = window.location.href;
-            // 镜像按钮
-            var link = document.getElementById('mirror');
-            // 下载按钮
-            var headerDownload = document.getElementById('header-download');
-            window.onload = function() {
-                // 设置显示下载
-                headerDownload.style.display="";
-                // 在这里编写要在页面加载时执行的 JavaScript 代码
-                if (href.includes("gitee")) {
-                    link.setAttribute("href", "https://nav.xiaochenbian.cc");
-                    link.setAttribute("target", "_self");
-                } else {
-                    link.setAttribute("href", "https://xiaochenbian.gitee.io/nav/");
-                    link.setAttribute("target", "_self");
-                }
-            };
         </script>
     </body>
     <style>
@@ -167,16 +149,12 @@
             text-decoration:none; color:#3e3ef7; font-weight:600; font-size:16px; border-bottom: 2px solid #3e3ef7;
         }
 
-        .myhome {
-            display: flex;
-            justify-content: space-between;
-        }
 
         .block {
             flex-basis: calc(50% - 10px);
-            padding: 20px;
+            padding: 50px;
             background-color: white;
-            box-shadow: 0 2px 4px rgba(242, 220, 204, 0.7); /* 修改为浅蓝色阴影 */
+            box-shadow: 0 2px 4px rgba(242, 220, 204, 0.7);
         }
 
     </style>

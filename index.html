@@ -35,7 +35,7 @@
                         <iconify-icon icon="material-symbols:folder-outline"></iconify-icon>
                         知识库
                     </a>
-                    <a id="header-download" style="display: none" href="download.html">
+                    <a id="header-download" href="download.html">
                         <iconify-icon icon="mingcute:download-line"></iconify-icon>
                         下载
                     </a>
@@ -67,7 +67,7 @@
                 </li>
                 <li class="item">
                     <a class="scrollTo" href="#server">
-                        云服务器
+                        云服务器&网盘
                     </a>
                 </li>
                 <li class="item">
@@ -233,18 +233,6 @@
                                     processOn
                                 </a>
                             </li>
-                            <li>
-                                <a href="https://www.aliyundrive.com/drive">
-                                    <img class="lazy" loading="lazy" src="static/img/me/aliyunpan.ico"/>
-                                    阿里云盘
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://pan.baidu.com/">
-                                    <img class="lazy" loading="lazy" src="static/img/me/百度网盘.ico"/>
-                                    百度网盘
-                                </a>
-                            </li>
                         </ul>
                     </div>
                     <!--开发-->
@@ -303,6 +291,18 @@
                                 <a href="http://cron.ciding.cc/">
                                     <img class="lazy" loading="lazy" src="static/img/me/ciding.png"/>
                                     磁钉
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://c.runoob.com/front-end/61/">
+                                    <img class="lazy" loading="lazy" src="static/img/me/c-runoob-logo.ico"/>
+                                    菜鸟工具（html在线工具）
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.runoob.com/try/try.php?filename=tryhtml_intro">
+                                    <img class="lazy" loading="lazy" src="static/img/me/菜鸟教程.ico"/>
+                                    菜鸟教程（html在线工具）
                                 </a>
                             </li>
                             <li>
@@ -418,10 +418,40 @@
                             </li>
                         </ul>
                     </div>
-                    <!--云服务器-->
+                    <!--云服务器&网盘-->
                     <div id="server" class="jj-list">
                         <div class="jj-list-tit">&bullet; 服务器</div>
                         <ul class="jj-list-con">
+                            <li>
+                                <a href="https://www.aliyundrive.com/drive">
+                                    <img class="lazy" loading="lazy" src="static/img/me/aliyunpan.ico"/>
+                                    阿里云盘
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://pan.baidu.com/">
+                                    <img class="lazy" loading="lazy" src="static/img/me/百度网盘.ico"/>
+                                    百度网盘
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.feijipan.com/console/share/files">
+                                    <img class="lazy" loading="lazy" src="static/img/me/小飞机.ico"/>
+                                    小飞机网盘
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://pc.woozooo.com/mydisk.php">
+                                    <img class="lazy" loading="lazy" src="static/img/me/蓝奏.ico"/>
+                                    蓝奏网盘
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.jianguoyun.com/d/home#/">
+                                    <img class="lazy" loading="lazy" src="static/img/me/坚果云.png"/>
+                                    坚果云盘
+                                </a>
+                            </li>
                             <li>
                                 <a href="https://dash.zeabur.com/projects/6481fe69866e6d39e64d66be/services/6481fe98866e6d39e64d66c4?envID=6481fe6959b271a1c1bae9fa">
                                     <img class="lazy" loading="lazy" src="static/img/me/zeabur.svg"/>
@@ -716,6 +746,13 @@
                                     </a>
                                 </li>
                                 <li>
+                                    <a href="https://www.price.com.hk/">
+                                        <img class="lazy"  loading="lazy" src="static/img/me/price-香港.png"/>
+                                        price-香港
+                                    </a>
+                                </li>
+
+                                <li>
                                     <a href="http://192.168.8.1/?origin=xxx#/login">
                                        华为移动路由器后台
                                     </a>
@@ -762,25 +799,7 @@
             $(function(){
                 $("#footer").load("_footer.html");
             });
-            // 当前地址
-            var href = window.location.href;
-            // 镜像按钮
-            var link = document.getElementById('mirror');
-            // 下载按钮
-            var headerDownload = document.getElementById('header-download');
-            window.onload = function() {
-                // 设置显示下载
-                headerDownload.style.display="";
-                // 在这里编写要在页面加载时执行的 JavaScript 代码
-                if (href.includes("gitee")) {
-                    link.setAttribute("href", "https://nav.xiaochenbian.cc");
-                    link.setAttribute("target", "_self");
-                } else {
-                    link.setAttribute("href", "https://xiaochenbian.gitee.io/nav/");
-                    link.setAttribute("target", "_self");
 
-                }
-            };
         </script>
     </body>
     <style>
